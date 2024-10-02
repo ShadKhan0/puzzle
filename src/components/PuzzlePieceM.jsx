@@ -14,8 +14,8 @@ const PuzzlePiece = ({ piece }) => {
     <div
       ref={drag}
       style={{
-        width: '200px',
-        height: '200px',
+        width: '133.33px',
+        height: '133.33px',
         backgroundImage:` url(${piece.img})`,
         backgroundSize: 'cover',
         opacity: isDragging ? 0.5 : 1,

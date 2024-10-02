@@ -20,6 +20,11 @@
   height: 50px; /* Adjust size as needed */
   margin-right: 10px; /* Space between pieces */
 }
+.puzzle-area div div {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+}
 
 .slider {
   margin-top: 20px;

@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 import { useDrop } from 'react-dnd';
-import PuzzlePiece from './PuzzlePiece';
+import PuzzlePiece from './PuzzlePieceM';
 import Timer from './Timer';
 
 const PuzzleGame = () => {
   const [pieces, setPieces] = useState([
-    { id: 1, img: '/levels/level1/1.png', position: null },
-    { id: 2, img: '/levels/level1/2.png', position: null },
-    { id: 3, img: '/levels/level1/3.png', position: null },
-    { id: 4, img: '/levels/level1/4.png', position: null },
+    { id: 1, img: '/levels/level2/1.png', position: null },
+    { id: 2, img: '/levels/level2/2.png', position: null },
+    { id: 3, img: '/levels/level2/3.png', position: null },
+    { id: 4, img: '/levels/level2/4.png', position: null },
+    { id: 5, img: '/levels/level2/5.png', position: null },
+    { id: 6, img: '/levels/level2/6.png', position: null },
+    { id: 7, img: '/levels/level2/7.png', position: null },
+    { id: 8, img: '/levels/level2/8.png', position: null },
+    { id: 9, img: '/levels/level2/9.png', position: null },
+ 
+
   ]);
 
   const completeImagePath = '/levels/level1/complete-image.jpg';
@@ -18,9 +25,14 @@ const PuzzleGame = () => {
 
   const dropTargets = [
     { id: 1, position: { top: '0%', left: '0%' } },
-    { id: 2, position: { top: '0%', left: '50%' } },
-    { id: 3, position: { top: '50%', left: '0%' } },
-    { id: 4, position: { top: '50%', left: '50%' } },
+    { id: 2, position: { top: '0%', left: '33.33%' } },
+    { id: 3, position: { top: '0%', left: '66.66%' } },
+    { id: 4, position: { top: '33.33%', left: '0%' } },
+    { id: 5, position: { top: '33.33%', left: '33.33%' } },
+    { id: 6, position: { top: '33.33%', left: '66.66%' } },
+    { id: 7, position: { top: '66.66%', left: '0%' } },
+    { id: 8, position: { top: '66.66%', left: '33.33%' } },
+    { id: 9, position: { top: '66.66%', left: '66.66%' } },
   ];
 
   const correctPositions = {
@@ -28,6 +40,11 @@ const PuzzleGame = () => {
     2: 2,
     3: 3,
     4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
   };
 
   const [{ isOver }, drop] = useDrop(() => ({
@@ -88,7 +105,7 @@ const PuzzleGame = () => {
             <PuzzlePiece key={piece.id} piece={piece} />
           ))}
         </div>
-        <div ref={drop} className="puzzle-area" style={{ width: '400px', height: '400px', position: 'relative', marginLeft: '100px', border: '1px solid black', display: ' grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr  1fr' }}>
+        <div ref={drop} className="puzzle-area" style={{ width: '400px', height: '400px', position: 'relative', marginLeft: '100px', border: '1px solid black', display: ' grid', gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: 'repeat(3, 1fr)' }}>
           {dropTargets.map((target) => (
             <div
               key={target.id}

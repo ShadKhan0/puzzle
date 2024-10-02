@@ -2,17 +2,17 @@
 import React from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import PuzzleGame from '../components/PuzzleGame';
+import PuzzleGameM from '../../components/PuzzleGameM';
 
 
-const Home = () => {
+const Medium = () => {
   return (
     
     <DndProvider backend={HTML5Backend}>
       
-      <PuzzleGame />
+      <PuzzleGameM />
     </DndProvider>
   );
 };
 
-export default Home;
+export default Medium;
