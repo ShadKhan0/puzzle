@@ -67,6 +67,7 @@ const PuzzleGame = () => {
       setIsTimerActive(false);
       alert(`Level completed! Moves made: ${movesMade}`);
     }
+   
   };
 
   const handlePieceRightClick = (pieceId, event) => {
