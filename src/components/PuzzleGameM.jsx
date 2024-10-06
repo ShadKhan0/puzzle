@@ -4,19 +4,21 @@ import PuzzlePiece from "./PuzzlePieceM";
 import Timer from "./Timer";
 
 const PuzzleGame = () => {
+  const[ puzzlePath]=useState(`/levels/level2/puzzle${Math.floor(Math.random()*5)+1}`);
+
   const [pieces, setPieces] = useState([
-    { id: 1, img: "/levels/level2/1.png", position: null },
-    { id: 2, img: "/levels/level2/2.png", position: null },
-    { id: 3, img: "/levels/level2/3.png", position: null },
-    { id: 4, img: "/levels/level2/4.png", position: null },
-    { id: 5, img: "/levels/level2/5.png", position: null },
-    { id: 6, img: "/levels/level2/6.png", position: null },
-    { id: 7, img: "/levels/level2/7.png", position: null },
-    { id: 8, img: "/levels/level2/8.png", position: null },
-    { id: 9, img: "/levels/level2/9.png", position: null },
+    { id: 1, img:  `${puzzlePath}/1.png`, position: null },
+    { id: 2, img:  `${puzzlePath}/2.png`, position: null },
+    { id: 3, img:  `${puzzlePath}/3.png`, position: null },
+    { id: 4, img:  `${puzzlePath}/4.png`, position: null },
+    { id: 5, img:  `${puzzlePath}/5.png`, position: null },
+    { id: 6, img: `${puzzlePath}/6.png`, position: null },
+    { id: 7, img:  `${puzzlePath}/7.png`, position: null },
+    { id: 8, img:  `${puzzlePath}/8.png`, position: null },
+    { id: 9, img:  `${puzzlePath}/9.png`, position: null },
   ]);
 
-  const completeImagePath = "/levels/level1/complete-image.jpg";
+  const completeImagePath = `${puzzlePath}/complete-image.jpg`;
   const [isTimerActive, setIsTimerActive] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [movesMade, setMovesMade] = useState(0);
